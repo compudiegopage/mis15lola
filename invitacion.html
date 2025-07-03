@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis 15 – Lola</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Sección 0 : Portada con cuenta‑atrás -->
+<section class="hero" style="--hero-img:url('../img/hero-fiesta.jpg');"><!-- TODO -->
+  <div class="hero-content">
+    <h1 class="big">MIS 15 LOLA</h1>
+    <div id="countdown" class="countdown"></div>
+  </div>
+</section>
+
+<!-- Sección 1 : ¿Cuándo? -->
+<section class="section">
+  <img src="img/calendario.png" alt="Calendario" class="icon"><!-- TODO -->
+  <h2>¿Cuándo?</h2>
+  <p><strong>15 de febrero de 2026 – 13:00&nbsp;hs</strong></p>
+</section>
+
+<!-- Sección 2 : ¿Dónde? -->
+<section class="section alt">
+  <h2>¿Dónde?</h2>
+  <p><!-- TODO: dirección exacta --></p>
+  <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener">Cómo llegar</a><!-- TODO -->
+</section>
+
+<!-- Sección 3 : Regalos -->
+<section class="section">
+  <h2>Regalos</h2>
+  <p>Tu presencia es lo más importante; si deseas colaborar, estos son mis datos bancarios.</p>
+  <button id="show-gift" class="btn">Ver cuenta</button>
+</section>
+
+<!-- Modal de regalos -->
+<div id="giftModal" class="modal">
+  <div class="modal-content">
+    <span id="closeGift" class="close">&times;</span>
+    <img src="img/cuenta.jpg" alt="Datos de la cuenta"><!-- TODO -->
+  </div>
+</div>
+
+<!-- Sección 4 : Banner -->
+<section class="banner" style="--hero-img:url('../img/banner.jpg');"><!-- TODO -->
+  <h2>¡MIS 15 LOLA!</h2>
+</section>
+
+<!-- Sección 5 : Fotos -->
+<section class="section alt">
+  <h2>¡Quiero ver tus fotos!</h2>
+  <p>Súbelas después de la fiesta o déjame tu mejor recuerdo.</p>
+  <a class="btn" href="https://drive.google.com" target="_blank" rel="noopener"><!-- TODO -->
+    Compartir fotos
+  </a>
+</section>
+
+<!-- Sección 6 : Dress code -->
+<section class="section">
+  <h2>Dress code</h2>
+  <p>Elegante sport</p>
+</section>
+
+<!-- Sección 7 : Confirmar asistencia -->
+<section class="section alt">
+  <h2>Confirmá tu asistencia</h2>
+
+  <form id="rsvpForm">
+    <div id="guests"><!-- se generan aquí --></div>
+
+    <button type="button" class="btn secondary" id="addGuest">Añadir otra persona</button>
+    <button type="submit" class="btn">Enviar</button>
+  </form>
+
+  <p class="closing">¡Te espero!</p>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+/* ----- variables globales ----- */
+:root {
+  --lila:#e8deff;
+  --blanco:#ffffff;
+  --acento:#a06cd5;
+  --texto:#333;
+  --radio:12px;
+  --gap:1.5rem;
+  --maxw:850px;
+  font-size:16px;
+}
+
+/* ----- resets ----- */
+*{box-sizing:border-box;margin:0;padding:0}
+body,button,input,select{font-family:"Roboto",sans-serif;color:var(--texto);line-height:1.5}
+
+/* ----- hero / banner de imagen ----- */
+.hero,
+.banner{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background: var(--overlay,rgba(0,0,0,.4)) var(--hero-img) center/cover no-repeat;
+  color:#fff;
+  padding:var(--gap);
+}
+.banner{min-height:40vh}
+
+.hero-content{max-width:var(--maxw)}
+.hero h1{font-size:clamp(2.5rem,6vw,4rem);text-transform:uppercase;letter-spacing:.1em}
+.hero .subtitle{margin:1rem 0 2rem}
+
+/* ----- secciones ----- */
+.section{
+  background:var(--blanco);
+  padding:3.5rem 1.25rem;
+  text-align:center;
+}
+.section.alt{background:var(--lila)}
+.section h2{margin-bottom:1rem;font-size:2rem;color:var(--acento)}
+.section p{margin-bottom:1.25rem;font-size:1.1rem}
+.section .icon{width:120px;margin-bottom:1rem}
+
+.big{font-size:clamp(3rem,7vw,5rem)}
+
+/* ----- countdown ----- */
+.countdown{font-size:clamp(1.4rem,4vw,2.2rem);margin-top:1rem;font-weight:bold}
+
+/* ----- botones ----- */
+.btn{
+  display:inline-block;
+  background:var(--acento);
+  color:#fff;
+  padding:.85rem 1.75rem;
+  border:none;
+  border-radius:var(--radio);
+  font-size:1rem;
+  text-decoration:none;
+  cursor:pointer;
+  transition:opacity .25s;
+}
+.btn:hover{opacity:.85}
+.btn.secondary{background:#555}
+
+/* ----- modal regalos ----- */
+.modal{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  z-index:1000;
+}
+.modal-content{
+  background:#fff;
+  padding:1rem;
+  border-radius:var(--radio);
+  max-width:500px;
+  width:100%;
+  position:relative;
+}
+.modal-content img{width:100%;height:auto;display:block}
+.close{
+  position:absolute;top:.5rem;right:.75rem;
+  font-size:1.75rem;cursor:pointer;font-weight:bold;color:#666;
+}
+
+/* ----- formulario RSVP ----- */
+/* --------------------------------------
+   FORMULARIO RSVP – VERSIÓN PULIDA
+   -------------------------------------- */
+
+#rsvpForm{
+  max-width:600px;      /* tarjetón centrado */
+  margin:auto;
+  background:#ffffff;
+  padding:2rem 1.5rem;
+  border-radius:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+/* Cada fila de invitados */
+.guest{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-bottom:1.25rem;
+}
+
+/* Campos de texto y selector */
+.guest input,
+.guest select{
+  flex:1 1 260px;          /* nunca menos de 260 px */
+  max-width:100%;          /* ni más anchos que el contenedor */
+  padding:.65rem .9rem;
+  font-size:1rem;
+  border:1px solid #ccc;
+  border-radius:8px;
+  background:#fdfdfd;
+  transition:border-color .2s, box-shadow .2s;
+}
+
+/* Efecto al recibir foco → marca el campo activo
+   y simula un “ripple” suave del color principal   */
+.guest input:focus,
+.guest select:focus{
+  outline:none;
+  border-color:var(--acento);
+  box-shadow:0 0 0 3px rgba(160,108,213,.25);
+}
+
+/* Apilar los elementos en pantallas angostas */
+/* 🔧 Ajuste para inputs demasiado altos en celulares */
+@media (max-width: 600px) {
+  .guest input,
+  .guest select {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    font-size: 0.95rem;
+  }
+}
+
+
+/* Botones del formulario */
+#addGuest.btn.secondary{
+  margin-top:.25rem;      /* acerca el botón a los campos */
+}
+#rsvpForm .btn{
+  width:100%;
+  max-width:260px;
+  margin:.5rem auto 0;
+}
