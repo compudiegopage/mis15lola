@@ -18,7 +18,7 @@ if (countdownEl) {
     const s = Math.floor(diff / 1e3) % 60;
 
     countdownEl.textContent =
-      `${d} d ${h} h ${m} m ${s} s`;
+      `${d} Días ${h} horas ${m} min ${s} seg`;
   };
   updateCountdown();
   const timer = setInterval(updateCountdown, 1000);

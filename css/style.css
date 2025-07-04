@@ -15,16 +15,42 @@
 body,button,input,select{font-family:"Roboto",sans-serif;color:var(--texto);line-height:1.5}
 
 /* ----- hero / banner de imagen ----- */
-.hero,
+.hero{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('../img/fondo.PNG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: var(--gap);
+  font-family: "Roboto", sans-serif;
+  color: var(--acento);
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  text-transform: none;
+
+
+}
 .banner{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background: var(--overlay,rgba(0,0,0,.4)) var(--hero-img) center/cover no-repeat;
-  color:#fff;
-  padding:var(--gap);
+    min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('../img/fondo.PNG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+font-family: "Roboto", sans-serif;
+  color: var(--acento);
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  text-transform: none;
 }
 .banner{min-height:40vh}
 
