@@ -1,4 +1,3 @@
-/* ---------- 1) Cuenta regresiva ---------- */
 const countdownEl = document.getElementById("countdown");
 if (countdownEl) {
   const eventDate = new Date("2026-02-15T13:00:00-03:00"); // Hora local Buenos Aires
@@ -17,12 +16,16 @@ if (countdownEl) {
     const m = Math.floor(diff / 6e4) % 60;
     const s = Math.floor(diff / 1e3) % 60;
 
-    countdownEl.textContent =
-      `${d} Días ${h} horas ${m} min ${s} seg`;
+    countdownEl.innerHTML =
+      `<span class="countdown-item">${d} <small>Días</small></span>` +
+      `<span class="countdown-item">${h} <small>Horas</small></span>` +
+      `<span class="countdown-item">${m} <small>Min</small></span>` +
+      `<span class="countdown-item">${s} <small>Seg</small></span>`;
   };
   updateCountdown();
   const timer = setInterval(updateCountdown, 1000);
 }
+
 
 /* ---------- 2) Modal de regalos ---------- */
 const modal = document.getElementById("giftModal");

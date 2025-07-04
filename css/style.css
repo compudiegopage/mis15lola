@@ -179,3 +179,125 @@ font-family: "Roboto", sans-serif;
   max-width:260px;
   margin:.5rem auto 0;
 }
+.section p strong {
+  font-size: 1.5rem;   /* aumentá este valor a lo que quieras */
+  font-weight: 700;    /* opcional, para que resalte más */
+  color: var(--acento); /* opcional, para que combine con otros títulos */
+}
+.banner h2 {
+  font-family: 'Montserrat', sans-serif;   /* fuente moderna y elegante */
+  font-size: clamp(3rem, 8vw, 6rem);       /* tamaño responsivo grande */
+  font-weight: 900;                        /* peso fuerte */
+  color: #a06cd5;                         /* color lila (variable --acento) */
+  text-transform: uppercase;              /* mayúsculas */
+  letter-spacing: 0.15em;                 /* espacio entre letras */
+  text-shadow:
+    2px 2px 5px rgba(0,0,0,0.6);         /* sombra negra suave para resaltar */
+  margin: 0;                             /* elimina márgenes por defecto */
+}
+.hero h1.big {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  color: var(--acento);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow:
+    2px 2px 5px rgba(0,0,0,0.6);
+  margin: 0;
+}
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.countdown-item {
+  background: var(--acento);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  min-width: 70px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.countdown-item:hover {
+  transform: scale(1.1);
+}
+
+.countdown-item small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+  text-transform: uppercase;
+}
+/* Modal general */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+/* Contenido modal - tarjeta regalos */
+.regalo-card {
+  background: var(--lila);
+  padding: 2rem 2.5rem;
+  border-radius: var(--radio);
+  max-width: 350px;
+  width: 90%;
+  text-align: center;
+  color: var(--acento);
+  position: relative;
+  box-shadow: 0 8px 20px rgba(160,108,213,0.4);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Imagen regalos arriba */
+.regalo-img {
+  max-width: 100px;
+  margin-bottom: 1.5rem;
+}
+
+/* Título REGALOS */
+.regalo-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Alias abajo */
+.regalo-card p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Botón cerrar */
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.75rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--acento);
+  background: transparent;
+  border: none;
+}
+.regalo-img {
+  display: block;        /* hace que el img se comporte como bloque */
+  margin: 0 auto 1.5rem; /* margén arriba/abajo automático y espacio abajo */
+  max-width: 100px;
+}
