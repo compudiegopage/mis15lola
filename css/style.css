@@ -51,12 +51,13 @@ font-family: "Roboto", sans-serif;
   -webkit-text-stroke: 0;
   text-shadow: none;
   text-transform: none;
+    padding: var(--gap);  /* esto ya está bien */
+
 }
 .banner{min-height:40vh}
 
 .hero-content{max-width:var(--maxw)}
 .hero h1{font-size:clamp(2.5rem,6vw,4rem);text-transform:uppercase;letter-spacing:.1em}
-.hero .subtitle{margin:1rem 0 2rem}
 
 /* ----- secciones ----- */
 .section{
@@ -301,3 +302,34 @@ font-family: "Roboto", sans-serif;
   margin: 0 auto 1.5rem; /* margén arriba/abajo automático y espacio abajo */
   max-width: 100px;
 }
+@media (max-width: 600px) {
+  .banner {
+    min-height: 30vh;         /* menor altura */
+    padding: 2rem 1rem;       /* más espacio interno */
+  }
+
+  .banner h2 {
+    font-size: 2rem;          /* texto más chico en pantallas pequeñas */
+    letter-spacing: 0.05em;   /* menos separación si querés */
+  }
+}
+.hero-content .subtitle {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 500;
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px
+}
+.hero .subtitle {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 500;
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px
+}
+
+
