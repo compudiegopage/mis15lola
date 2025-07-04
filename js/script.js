@@ -38,7 +38,6 @@ window.addEventListener("click", e => {
   if (e.target === modal) modal.style.display = "none";
 });
 
-/* ---------- 3) RSVP dinámico ---------- */
 const guestsDiv = document.getElementById("guests");
 const addGuestBtn = document.getElementById("addGuest");
 
@@ -46,59 +45,49 @@ function createGuestRow() {
   const div = document.createElement("div");
   div.className = "guest";
   div.innerHTML = `
-    <input type="text" name="nombre[]"     placeholder="Nombre"      required>
-    <input type="text" name="apellido[]"   placeholder="Apellido"    required>
-    <select name="dieta[]">
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <input type="text" name="apellido" placeholder="Apellido" required>
+    <select name="restriccion">
       <option value="">Restricción alimentaria</option>
-      <option>Ninguna</option>
-      <option>Vegetariano</option>
-      <option>Vegano</option>
-      <option>Celíaco</option>
-      <option>Diabético</option>
-      <option>Hipertenso</option>
-      <option>Intolerante a la lactosa</option>
-      <option>Otro</option>
+      <option value="Ninguna">Ninguna</option>
+      <option value="Vegetariano">Vegetariano</option>
+      <option value="Vegano">Vegano</option>
+      <option value="Celíaco">Celíaco</option>
+      <option value="Diabético">Diabético</option>
+      <option value="Hipertenso">Hipertenso</option>
+      <option value="Intolerante a la lactosa">Intolerante a la lactosa</option>
+      <option value="Otro">Otro</option>
     </select>
   `;
   guestsDiv.appendChild(div);
 }
 
-// Al menos un invitado por defecto
 if (guestsDiv) createGuestRow();
 
 addGuestBtn?.addEventListener("click", createGuestRow);
 
-/* Manejo de envío (aquí solo ejemplo local) */
-document.getElementById("rsvpForm")?.addEventListener("submit", e => {
+document.getElementById("rsvpForm").addEventListener("submit", e => {
   e.preventDefault();
 
-  const guests = [...document.querySelectorAll(".guest")].map(div => {
-    return {
-      nombre: div.querySelector('input[name="nombre[]"]').value.trim(),
-      apellido: div.querySelector('input[name="apellido[]"]').value.trim(),
-      restriccion: div.querySelector('select[name="dieta[]"]').value
-    };
-  });
+  const guests = [...document.querySelectorAll(".guest")].map(div => ({
+    nombre: div.querySelector('input[name="nombre"]').value.trim(),
+    apellido: div.querySelector('input[name="apellido"]').value.trim(),
+    restriccion: div.querySelector('select[name="restriccion"]').value
+  }));
 
-  fetch("https://script.google.com/macros/s/AKfycbxVEe7qkKzma5MMMd-kujq6R_pT0Ui4Aeh22-70x2HfgvSg3kvf42SbkjdNr5SpSYhj/exec", {  // <-- pegá tu URL acá
-    method: "POST",
-    body: JSON.stringify({ guests }),
-    headers: { "Content-Type": "application/json" }
+  fetch('https://sheetdb.io/api/v1/apz62ss7iou2o', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data: guests })  // sheetdb espera "data"
   })
-  .then(response => {
-    if (response.ok) {
-      alert("¡Gracias por confirmar!");
-      e.target.reset();
-      document.getElementById("guests").innerHTML = "";
-      createGuestRow();
-    } else {
-      alert("Hubo un error. Intentá de nuevo.");
-    }
+  .then(res => res.json())
+  .then(data => {
+    alert("¡Gracias por confirmar!");
+    e.target.reset();
+    guestsDiv.innerHTML = "";
+    createGuestRow();
+  })
+  .catch(err => {
+    alert("Error enviando datos: " + err.message);
   });
 });
-function doGet() {
-  return ContentService
-    .createTextOutput("🟢 Web App activa: envía datos con POST.")
-    .setMimeType(ContentService.MimeType.TEXT);
-}
-
