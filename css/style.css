@@ -8,11 +8,12 @@
   --gap:1.5rem;
   --maxw:850px;
   font-size:16px;
+  
 }
 
 /* ----- resets ----- */
 *{box-sizing:border-box;margin:0;padding:0}
-body,button,input,select{font-family:"Roboto",sans-serif;color:var(--texto);line-height:1.5}
+body,button,input,select{font-family:"times new roman",sans-serif;color:var(--texto);line-height:1.5}
 
 /* ----- hero / banner de imagen ----- */
 .hero{
@@ -27,7 +28,7 @@ body,button,input,select{font-family:"Roboto",sans-serif;color:var(--texto);line
   background-repeat: no-repeat;
   color: white;
   padding: var(--gap);
-  font-family: "Roboto", sans-serif;
+  font-family: "times new roman", sans-serif;
   color: var(--acento);
   -webkit-text-stroke: 0;
   text-shadow: none;
@@ -47,7 +48,7 @@ body,button,input,select{font-family:"Roboto",sans-serif;color:var(--texto);line
   background-repeat: no-repeat;
   background-blend-mode: overlay;
 font-family: "Roboto", sans-serif;
-  color: var(--acento);
+  color: var(--blanco);
   -webkit-text-stroke: 0;
   text-shadow: none;
   text-transform: none;
@@ -73,7 +74,10 @@ font-family: "Roboto", sans-serif;
 .big{font-size:clamp(3rem,7vw,5rem)}
 
 /* ----- countdown ----- */
-.countdown{font-size:clamp(1.4rem,4vw,2.2rem);margin-top:1rem;font-weight:bold}
+.countdown{
+  font-size:clamp(1.4rem,4vw,2.2rem);
+  margin-top:1rem;
+  font-weight:bold}
 
 /* ----- botones ----- */
 .btn{
@@ -189,7 +193,7 @@ font-family: "Roboto", sans-serif;
   font-family: 'Montserrat', sans-serif;   /* fuente moderna y elegante */
   font-size: clamp(3rem, 8vw, 6rem);       /* tamaño responsivo grande */
   font-weight: 900;                        /* peso fuerte */
-  color: #a06cd5;                         /* color lila (variable --acento) */
+  color: #ffffff;                         /* color lila (variable --acento) */
   text-transform: uppercase;              /* mayúsculas */
   letter-spacing: 0.15em;                 /* espacio entre letras */
   text-shadow:
@@ -200,30 +204,37 @@ font-family: "Roboto", sans-serif;
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
-  color: var(--acento);
+  color: var(--blanco);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   text-shadow:
-    2px 2px 5px rgba(0,0,0,0.6);
+    2px 2px 5px rgba(198, 131, 184, 0.6);
   margin: 0;
+}
+@keyframes glow {
+  0% { text-shadow: 0 0 5px rgba(255,255,255,0.3); }
+  50% { text-shadow: 0 0 15px rgba(255,255,255,0.8); }
+  100% { text-shadow: 0 0 5px rgba(255,255,255,0.3); }
 }
 .countdown {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'times new roman', sans-serif;
+  animation: glow 2s ease-in-out infinite;
+  
+
+
 }
 
 .countdown-item {
-  background: var(--acento);
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 10px;
   font-weight: 700;
   min-width: 70px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
 }
 
