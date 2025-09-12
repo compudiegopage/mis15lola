@@ -285,7 +285,6 @@ body,button,input,select{color:var(--texto);line-height:1.5}
   color: var(--acento);
   position: relative;
   box-shadow: 0 8px 20px rgba(160,108,213,0.4);
-  font-family: 'Great Vibes', cursive;
 }
 
 /* Imagen regalos arriba */
@@ -298,7 +297,6 @@ body,button,input,select{color:var(--texto);line-height:1.5}
 .regalo-card h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  text-transform: uppercase;
   font-weight: 700;
 }
 
