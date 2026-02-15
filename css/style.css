@@ -360,3 +360,140 @@ body,button,input,select{color:var(--texto);line-height:1.5}
 
 }
 
+/* ---------------- MENSAJES ---------------- */
+
+.mensaje-card {
+  background: var(--blanco);
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  text-align: left;
+  border-left: 5px solid var(--acento);
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .4s ease;
+}
+
+.mensaje-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mensaje-card p {
+  margin-top: .6rem;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.mensaje-nombre {
+  display: block;
+  color: var(--acento);
+  font-size: 1.1rem;
+  margin-bottom: .2rem;
+}
+
+.mensaje-fecha {
+  display: block;
+  font-size: .8rem;
+  color: #777;
+  margin-bottom: .5rem;
+}
+
+.firma-card {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(160,108,213,0.3);
+  animation: fadeInUp .6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.firma-card h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: var(--acento);
+  margin-bottom: 1rem;
+}
+
+.firma-card textarea,
+.firma-card input {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: .9rem;
+  font-family: 'Lora', serif;
+}
+/* -------- LIBRO DE FIRMAS -------- */
+
+.firma-card {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(160,108,213,0.3);
+  animation: fadeInUp .6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.firma-card h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: var(--acento);
+  margin-bottom: 1rem;
+}
+
+.frase-lola {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+.firma-card input,
+.firma-card textarea {
+  width: 100%;
+  padding: .9rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.firma-card input:focus,
+.firma-card textarea:focus {
+  outline: none;
+  border-color: var(--acento);
+  box-shadow: 0 0 0 3px rgba(160,108,213,.25);
+}
+
+.firma-card textarea {
+  min-height: 120px;
+  resize: vertical;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libro de Firmas – Mis 15 Lola</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="hero" style="--hero-img:url('img/fondo.PNG');">
+
+  <div class="hero-content">
+
+    <div class="firma-card">
+
+      <h2>Libro de Firmas</h2>
+
+      <p class="frase-lola">
+        "Gracias por ser parte de mi noche mágica ✨"
+      </p>
+
+      <form id="firmaForm">
+
+        <input 
+          type="text" 
+          id="nombre" 
+          placeholder="Tu nombre" 
+          required
+        >
+
+        <textarea 
+          id="mensaje" 
+          placeholder="Escribí tu mensaje para Lola..."
+          required
+        ></textarea>
+
+        <button type="submit" class="btn">
+          Enviar mensaje 💜
+        </button>
+
+      </form>
+
+      <p id="estado" style="margin-top:1rem;"></p>
+
+    </div>
+
+  </div>
+
+  <script type="module" src="js/libro.js"></script>
+
+</body>
+</html>
