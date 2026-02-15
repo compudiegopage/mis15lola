@@ -1,6 +1,6 @@
 const countdownEl = document.getElementById("countdown");
 if (countdownEl) {
-  const eventDate = new Date("2026-02-15T21:00:00-03:00"); // Hora local Buenos Aires
+  const eventDate = new Date("2026-02-15T21:30:00-03:00"); // Hora local Buenos Aires
 
   const updateCountdown = () => {
     const now = new Date();
